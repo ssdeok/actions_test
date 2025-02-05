@@ -34,7 +34,7 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ screts.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT}}
           # 복사할 파일 이름, 여러개의 파일을 복사할 때는 쉼표(,)로 파일 이름을 구분한다
           source: "README.md"
