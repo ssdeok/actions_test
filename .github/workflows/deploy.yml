@@ -105,7 +105,7 @@ jobs:
         if: success()
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          title: "배포 종료 - 성공"
+          title: "😍배포 종료 - 성공"
 
       # 액션 시작 알림 메세지
       - name: End Message - Fail
@@ -114,4 +114,4 @@ jobs:
         if: failure()
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          title: "배포 종료 - 실패"
+          title: "😒배포 종료 - 실패"
