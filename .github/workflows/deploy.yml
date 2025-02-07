@@ -107,6 +107,7 @@ jobs:
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           title: "😍배포 종료 - 성공"
+          iamge: "https://i.namu.wiki/i/CxyflWoOqVFQX-xPDaezC536_J6l8sLuUGfeyCdsbUF0SYBd3IxxXGKqZGgXhlfXQll05vW-IJiWF8qCRcVQbnzVkPJs5UW26bVEjXP3n8SrEoP9789l73JbNFafxlnFj9ixOIiXIdH-cUAhd33vCQ.webp"
 
       # 액션 시작 알림 메세지
       - name: End Message - Fail
