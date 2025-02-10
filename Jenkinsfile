@@ -48,8 +48,6 @@ pipeline {
           }
         }
 
-    }
-
         stage("Docker Image Build & Container Run") {
           steps {
             script {
@@ -62,6 +60,10 @@ pipeline {
           }
 
         }
+
+    }
+
+        
 
         
 }
