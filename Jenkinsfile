@@ -25,7 +25,7 @@ pipeline {
 		    }
 		    
 		    failure {
-				    echo '실패 시 실행된다.'
+				    echo '실패 시 실행됨.'
 		    }
     }
 }
