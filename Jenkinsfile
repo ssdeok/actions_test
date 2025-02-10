@@ -24,20 +24,6 @@ pipeline {
             }
           }
         }
-    }
-
-        stage("Docker Image Build & Container Run") {
-          steps {
-            script {
-              sh 'docker compose build'
-
-              sh 'docker compose down'
-
-              sh 'docker compose up -d'
-            }
-          }
-
-        }
 
         stage('Build Start') {
           steps {
@@ -61,6 +47,23 @@ pipeline {
            }
           }
         }
+
+    }
+
+        stage("Docker Image Build & Container Run") {
+          steps {
+            script {
+              sh 'docker compose build'
+
+              sh 'docker compose down'
+
+              sh 'docker compose up -d'
+            }
+          }
+
+        }
+
+        
 }
     
     post {
@@ -75,7 +78,7 @@ pipeline {
 		    failure {
 				    echo '실패 시 실행된다.'
 		    }
-    }
+    
           success {
               withCredentials([string(credentialsId: 'discord-webhook', variable: 'discord_webhook')]) {
                           discordSend description: """
@@ -99,4 +102,5 @@ pipeline {
                           title: "${env.JOB_NAME} : ${currentBuild.displayName} 실패", 
                           webhookURL: "$discord_webhook"
             }
-}
+      }
+    }
