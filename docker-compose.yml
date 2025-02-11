@@ -45,6 +45,8 @@ services:
     depends_on:
       - backend
       - db
+    env_file:
+      - .env
 
 volumes:
   db-volume:

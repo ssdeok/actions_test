@@ -1,0 +1,9 @@
+# HTTP를 HTTPS로 리다이렉트
+server {
+        listen 80;
+        server_name ${52.78.173.28.sslip.io};
+
+        location / {
+            return 301 https://$host$request_uri;
+        }
+    }
