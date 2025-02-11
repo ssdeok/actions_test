@@ -60,8 +60,12 @@ services:
     image: potatopizza/frontend:latest
     ports:
       - "80:80"
+      - "443:443"
     networks:
       - backend-connect
+    volumes:
+      - /etc/letsencrypt/live/52.78.173.28.sslip.io/fullchain.pem:/etc/letsencrypt/live/52.78.173.28.sslip.io/fullchain.pem
+      - /etc/letsencrypt/live/52.78.173.28.sslip.io/privkey.pem:/etc/letsencrypt/live/52.78.173.28.sslip.io/privkey.pem
     depends_on:
       - backend
       - db
